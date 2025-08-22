@@ -43,7 +43,7 @@ function Home() {
           { id: 21, nome: "Pietro", tipo: "Comercial", status: "Pendente", protocolo: "PRT-021", endereco: "Ondina" },
           { id: 22, nome: "Luan", tipo: "Suporte Técnico", status: "Pendente", protocolo: "PRT-022", endereco: "Cabula" },
           { id: 23, nome: "Tomás", tipo: "Financeiro", status: "Pendente", protocolo: "PRT-023", endereco: "Liberdade" },
-          { id: 24, nome: "Levi", tipo: "Comercial", status: "Pendente", protocolo: "PRT-024", endereco: "Graça" }
+          { id: 24, nome: "Levi", tipo: "Comercial", status: "Pendente", protocolo: "PRT-024", endereco: "Graça" },
 
         ]);
       }, 1000);
