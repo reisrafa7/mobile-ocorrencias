@@ -1,0 +1,51 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px #0003;
+}
+
+.modal-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn.aceitar {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn.rejeitar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn.fechar-modal {
+  background-color: #6c757d;
+  color: white;
+  margin-top: 1rem;
+}

@@ -1,177 +1,282 @@
-/* Container ocupa a tela toda */
-.detalhe-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  min-height: 100vh;
-  background: #f5f5f5;
-  box-sizing: border-box;
+/* Garantir que a tela ocupe 100% */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   width: 100%;
 }
 
-/* Card central - largura fluida */
+/* Card ocupa toda a tela */
 .detalhe-card {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
   background: #fff;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  width: 90%;
-  max-width: 900px;
-  min-width: 300px;
-  margin: auto;
-  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  overflow-y: auto;
 }
 
 /* Título */
 .detalhe-card h2 {
-  text-align: center;
-  margin-bottom: 12px;
-  font-size: 1.8rem;
-  color: #333;
+  display: flex;
+  align-items: center;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-/* Seções de informações */
-.info-section {
-  margin-bottom: 12px;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  color: #444;
+/* Botão voltar */
+.btn.voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: blue;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* Seção de informações */
+.info-section p {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 8px 0;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* Ícones */
+.icon {
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Status */
+.status-pendente {
+  color: #ff8800;
+  font-weight: bold;
+}
+
+.status-concluido {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-rejeitado {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Histórico */
+.historico {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 20px 0;
 }
 
 /* Botões */
-.botoes {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
 .btn {
-  padding: 16px;
+  width: 100%;
+  font-size: 15px;
+  padding: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  flex: 1;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.btn.voltar {
-  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .btn.aceitar {
-  background: #4caf50;
+  background: #28a745;
   color: #fff;
 }
 
 .btn.rejeitar {
-  background: #f44336;
+  background: #dc3545;
   color: #fff;
 }
 
-.btn:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* Área de relato */
-.form-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.form-section label {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.form-section textarea {
-  min-height: 120px;
-  padding: 14px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  resize: vertical;
-  font-size: 1.05rem;
-}
-
-/* Upload de fotos */
-.fotos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 12px;
-  margin-top: 1rem;
-}
-
-.fotos-grid img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-/* Responsividade Tablet */
-@media (max-width: 768px) {
+/* 🔹 Responsividade */
+@media (max-width: 600px) {
   .detalhe-card {
-    width: 95%;
-    padding: 24px;
-    gap: 20px;
-  }
-
-  .detalhe-card h2 {
-    font-size: 1.6rem;
-  }
-
-  .info-section {
-    font-size: 1rem;
-  }
-
-  .form-section textarea {
-    font-size: 1rem;
-    min-height: 110px;
-  }
-}
-
-/* Responsividade Mobile Full */
-@media (max-width: 480px) {
-  .detalhe-card {
-    width: 98%;
     padding: 20px;
-    gap: 18px;
   }
 
   .detalhe-card h2 {
-    font-size: 1.4rem;
+    font-size: 16px;
+    padding: 10px 12px;
   }
 
-  .info-section {
-    font-size: 0.95rem;
+  .info-section p {
+    font-size: 14px;
+    padding: 6px 0;
   }
 
   .btn {
-    font-size: 1.05rem;
-    padding: 16px;
+    font-size: 14px;
+    padding: 14px;
   }
 
-  .form-section label {
-    font-size: 1rem;
-  }
-
-  .form-section textarea {
-    font-size: 1rem;
-    min-height: 100px;
-    padding: 12px;
-  }
-
-  .fotos-grid img {
-    height: 100px;
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
   }
 }
+
+/* 🔹 Barra de progresso */
+.progresso-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.progress-line {
+  position: relative;
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  margin: 50px auto 30px;
+  width: 80%;
+  overflow: hidden;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: #007bff;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.progress-car {
+  position: absolute;
+  top: -16px;
+  transition: left 0.6s ease;
+  transform: translateX(-50%);
+}
+
+.progress-car .carro {
+  color: #007bff;
+  animation: bounce 0.8s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+.btn.avancar {
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 6px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.avancar:hover {
+  background: #0056b3;
+}
+
+.finalizado-msg {
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+  margin-top: 10px;
+}
+
+/* Seção do histórico */
+/* Caixa do histórico */
+.historico-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Título */
+.historico-section h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Lista */
+.historico-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Itens */
+.historico-lista li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: black;
+}
+
+/* Último item sem borda */
+.historico-lista li:last-child {
+  border-bottom: none;
+}
+
+/* Texto sem histórico */
+.sem-historico {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+/* 🔹 Cores por status */
+.historico-iniciado {
+  color: #ff9800; /* laranja */
+  font-weight: 600;
+}
+
+.historico-em {
+  color: #2196f3; /* azul */
+  font-weight: 600;
+}
+
+.historico-concluido {
+  color: #4caf50; /* verde */
+  font-weight: 600;
+}
+
+.historico-rejeitado {
+  color: #f44336; /* vermelho */
+  font-weight: 600;
+}
+
